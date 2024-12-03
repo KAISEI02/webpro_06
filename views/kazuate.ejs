@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>数当て</title>
+</head>
+<body>
+    <p>その数はは<%= your %>です．</p>
+    <p>正解はは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>試合中<%= win %>回当てています．</p>
+    
+    <hr>
+    <form action="/kazuate">
+        <input type="text" name="hand" required>
+        <label for="hand">次はどっちなんだい！</label>
+        <input type="hidden" name="win" value="<%= win %>">
+        <input type="hidden" name="total" value="<%= total %>">
+        <input type="submit" values="偶数と奇数どっちなんだい">
+    </form>   
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>コイントス</title>
+</head>
+<body>
+    
+    <p>コンピュータは<%= cpu %>です．</p>
+    <p>判定：<%= judgement %></p>
+    <p>現在<%= total %>試合中<%= win %>回当てています．</p>
+    
+    <hr>
+    <form action="/koin2" method="get">
+        <input type="checkbox" name="test1" id="1">
+        <label for="test1">裏</label><br>
+        <input type="checkbox" name="test2" id="2">
+        <label for="test2">表</label><br>
+        <input type="submit" value="送信">
+    </form>
+</body>
+</html>
+
+
+
+
