@@ -1,8 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>https://github.com/sudahiroshi/webpro_06/blob/main/public/get_test02.js</string>
-</dict>
-</plist>
+const addbutton = document.querySelector('#add');
+const display = document.querySelector('#answer');
+
+addbutton.addEventListener('click', () => {
+    fetch( "/add?num1=2&num2=3" )
+    .then( (response) => {
+        if( !response.ok ) {
+            throw new Error('Error');
+        }
+        return response.json();
+    })
+    .then( (response) => {
+        display.value = response.answer;
+        console.log( response );
+    })
+})
